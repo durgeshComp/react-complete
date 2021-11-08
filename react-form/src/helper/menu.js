@@ -8,13 +8,13 @@ export const menu = [
   {
     icon: <HomeOutlinedIcon />,
     title: "Dashboard",
-    path: '/dashboard',
+    path: '/landing/dashboard',
     items: []
   },
   {
     icon: <HomeOutlinedIcon />,
     title: "Colors",
-    path: '/colors',
+    path: '/landing/colors',
     items: []
   },
   {

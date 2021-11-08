@@ -42,7 +42,7 @@ const MultiLevel = ({ item }) => {
 
     return (
         <>
-            <ListItem button onClick={handleClick} to={item.path}>
+            <ListItem button onClick={handleClick}>
                 <Link to={item.path} style={{display: 'flex', flexDirection: 'row', textDecoration: 'none', color: 'white'}}>
                     <ListItemIcon style={{ color: 'white' }}>{item.icon}</ListItemIcon>
                     <ListItemText primary={item.title} />

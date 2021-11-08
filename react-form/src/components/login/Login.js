@@ -27,9 +27,10 @@ function Login() {
         })
         .then((res) => res.json())
         .then(data => {
-            // localStorage.setItem('user_token', data.token)
-            // localStorage.setItem('user_details', data.message)
+            localStorage.setItem('user_token', data.token)
+            localStorage.setItem('user_details', data.message)
             // window.location.href = "/dashboard"
+            history.push('/landing/dashboard')
         })
         .catch((err) => console.error(err))
     }

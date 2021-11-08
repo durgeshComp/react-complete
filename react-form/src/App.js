@@ -4,14 +4,13 @@ import Home from './components/Home';
 import Login from './components/login/Login';
 import Landing from './components/landing/Landing';
 
-
 function App() {
   const token = localStorage.getItem('user_token')
-
+  
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Landing} />
+        <Route  path="/landing" component={Landing} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Home} />
       </Switch>

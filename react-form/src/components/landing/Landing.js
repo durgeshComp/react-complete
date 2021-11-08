@@ -26,10 +26,9 @@ function Landing() {
                     <Col xs={10} className={show ? null : 'fullWidth'} style={{ paddingLeft: '0px' }}>
                         <Header showNaviagtion={showData} />
                         <Container>
-
                             <Switch>
-                                <Route exact path="/dashboard" component={Dashboard} />
-                                <Route exact path="/colors" component={Colors} />
+                                <Route exact path="/landing/dashboard" component={Dashboard} />
+                                <Route exact path="/landing/colors" component={Colors} />
                             </Switch>
                         </Container>
                     </Col>
