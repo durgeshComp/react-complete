@@ -1,0 +1,12 @@
+.landing-wrapper{
+    background-color: white !important;
+    height: 100%;
+}
+
+.hide{
+    display: none;
+}
+
+.fullWidth{
+    width: 100% !important;
+}
