@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 require('dotenv').config()
 
 //import routes
-const authRoutes = require('./routes/auth');
-const { db } = require('./models/user');
+// const authRoutes = require('./routes/auth');
+// const { db } = require('./models/user');
 
 //app
 const app = express();
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //routes middleware
-app.use('/api', authRoutes);
+// app.use('/api', authRoutes);
 const port =  5000;
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)

@@ -1,12 +1,17 @@
 import React,{useState} from 'react'
 import './Login.css'
 import { Link, useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import {login} from '../../actions/auth'
 
 
 function Login() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const { isLoggedIn } = useSelector(state => state.auth);
+  const { message } = useSelector(state => state.message);
 
     const history = useHistory();
 
@@ -17,22 +22,26 @@ function Login() {
     }
 
     const fetchApi = () => {
-        fetch('http://localhost:5000/api/signin', {
-            method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                "email": email,
-                "password": password
-            })
-        })
-        .then((res) => res.json())
-        .then(data => {
-            localStorage.setItem('user_token', data.token)
-            localStorage.setItem('user_details', data.message)
-            // window.location.href = "/dashboard"
-            history.push('/landing/dashboard')
-        })
-        .catch((err) => console.error(err))
+        // fetch('http://localhost:5000/api/signin', {
+        //     method: 'post',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify({
+        //         "email": email,
+        //         "password": password
+        //     })
+        // })
+        // .then((res) => res.json())
+        // .then(data => {
+        //     localStorage.setItem('user_token', data.token)
+        //     localStorage.setItem('user_details', data.message)
+        //     // window.location.href = "/dashboard"
+        //     history.push('/landing/dashboard')
+        // })
+        // .catch((err) => console.error(err))
+
+        dispatch(login(email, password))
+            .then((res) => console.log('response is:', res))
+            .catch((err) => console.log('err ise: ', err))
     }
 
 
