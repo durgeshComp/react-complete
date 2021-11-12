@@ -9,7 +9,7 @@ import {
 
 
   import {
-    signup, signin, logoutApp
+    signup, signin, loggout
   } from "../services/auth.service"
 
   
@@ -82,7 +82,7 @@ import {
   };
   
   export const logout = () => (dispatch) => {
-    logoutApp();
+    loggout();
   
     dispatch({
       type: LOGOUT,

@@ -2,26 +2,26 @@ import axios from "axios";
 
 const API_URL = "http://localhost:5000/api/";
 
-const signup = (username, email, password) => {
-    const headers = {
-        'Content-Type': 'application/json'
-    };
+export const signup = (name, email, password) => {
+  const headers = {
+    'Content-Type': 'application/json'
+  };
   return axios.post(API_URL + "signup", {
-    username,
+    name,
     email,
     password,
-  }, {headers});
+  }, { headers });
 };
 
-const signin = (username, password) => {
-    const headers = {
-        'Content-Type': 'application/json'
-    };
+export const signin = (email, password) => {
+  const headers = {
+    'Content-Type': 'application/json'
+  };
   return axios
     .post(API_URL + "signin", {
-      username,
+      email,
       password,
-    }, {headers})
+    }, { headers })
     .then((response) => {
       if (response.data.accessToken) {
         localStorage.setItem("user", JSON.stringify(response.data));
@@ -31,12 +31,7 @@ const signin = (username, password) => {
     });
 };
 
-const logoutApp = () => {
+export const loggout = () => {
   localStorage.removeItem("user");
 };
 
-export default {
-    signup,
-    signin,
-    logoutApp,
-};
